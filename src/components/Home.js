@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import "../styles/main.css";
 import CarrierSection from "./CarrierSection";
 import AppIntroSection from "./AppIntroSection";
@@ -98,11 +98,13 @@ function Home() {
           </nav>
           <div className="header-right" style={{display: 'flex', alignItems: 'center', gap: 8}}>
             <a href="#" className="header-link" style={{color: '#222', fontWeight: 600, fontSize: 15, marginRight: 8}}>English</a>
-            <a href="#" className="header-link" style={{color: '#1763ff', fontWeight: 600, fontSize: 15, marginRight: 8}}>Sign in</a>
-            <button className="header-btn" style={{background: '#0060df', color: '#fff', borderRadius: 18, fontWeight: 700, fontSize: 18, padding: '12px 36px', marginLeft: 8, border: 'none', boxShadow: '0 2px 8px rgba(0,96,223,0.10)', display: 'flex', alignItems: 'center', gap: 10}}>
-              <i className="fa-solid fa-user-plus" style={{fontSize: 20}}></i>
-              Sign up For Free
-            </button>
+            <Link to="/login" className="header-link" style={{color: '#1763ff', fontWeight: 600, fontSize: 15, marginRight: 8, textDecoration: 'none'}}>Sign in</Link>
+            <Link to="/register" style={{textDecoration: 'none'}}>
+              <button className="header-btn" style={{background: '#0060df', color: '#fff', borderRadius: 18, fontWeight: 700, fontSize: 18, padding: '12px 36px', marginLeft: 8, border: 'none', boxShadow: '0 2px 8px rgba(0,96,223,0.10)', display: 'flex', alignItems: 'center', gap: 10}}>
+                <i className="fa-solid fa-user-plus" style={{fontSize: 20}}></i>
+                Sign up For Free
+              </button>
+            </Link>
             <button className="header-btn green" style={{background: '#009e4f', color: '#fff', borderRadius: 18, fontWeight: 700, fontSize: 18, padding: '12px 32px', marginLeft: 8, border: 'none', boxShadow: '0 2px 8px rgba(0,158,79,0.10)', display: 'flex', alignItems: 'center', gap: 10}}>
               <i className="fa-brands fa-shopify" style={{fontSize: 22}}></i>
               Shopify App
