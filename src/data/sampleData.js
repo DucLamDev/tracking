@@ -1,0 +1,83 @@
+export const sampleData = [
+  {
+    code: "ABC123456VN",
+    info: {
+      sender: "Nguyễn Văn A",
+      receiver: "Trần Thị B",
+      address: "Hà Nội",
+      status: "Đang giao",
+      productName: "Áo thun nam cao cấp",
+      productCode: "TSHIRT001",
+      price: 250000
+    },
+    tracking: [
+      { time: "2025-06-01 08:00", location: "Kho Hà Nội", status: "Đã nhận hàng" },
+      { time: "2025-06-02 10:00", location: "Kho Đà Nẵng", status: "Đang vận chuyển" }
+    ]
+  },
+  {
+    code: "XYZ987654VN",
+    info: {
+      sender: "Lê Văn C",
+      receiver: "Phạm Thị D",
+      address: "TP.HCM",
+      status: "Đã giao thành công",
+      productName: "Giày sneaker nữ",
+      productCode: "SNEAKER002",
+      price: 890000
+    },
+    tracking: [
+      { time: "2025-05-28 09:00", location: "Kho TP.HCM", status: "Đã nhận hàng" },
+      { time: "2025-05-29 14:00", location: "Kho Bình Dương", status: "Đang vận chuyển" },
+      { time: "2025-05-30 16:00", location: "Kho Hà Nội", status: "Đã giao thành công" }
+    ]
+  },
+  {
+    code: "DEF111222VN",
+    info: {
+      sender: "Phạm Văn E",
+      receiver: "Ngô Thị F",
+      address: "Đà Nẵng",
+      status: "Đang giao",
+      productName: "Balo laptop chống nước",
+      productCode: "BAG003",
+      price: 420000
+    },
+    tracking: [
+      { time: "2025-06-03 07:00", location: "Kho Đà Nẵng", status: "Đã nhận hàng" },
+      { time: "2025-06-04 11:00", location: "Kho Nha Trang", status: "Đang vận chuyển" }
+    ]
+  },
+  {
+    code: "GHI333444VN",
+    info: {
+      sender: "Trịnh Văn G",
+      receiver: "Đỗ Thị H",
+      address: "Hải Phòng",
+      status: "Chờ lấy hàng",
+      productName: "Tai nghe bluetooth",
+      productCode: "HEADSET004",
+      price: 320000
+    },
+    tracking: [
+      { time: "2025-06-05 10:00", location: "Kho Hải Phòng", status: "Chờ lấy hàng" }
+    ]
+  },
+  {
+    code: "JKL555666VN",
+    info: {
+      sender: "Nguyễn Văn I",
+      receiver: "Lê Thị K",
+      address: "Cần Thơ",
+      status: "Đã giao thành công",
+      productName: "Đồng hồ thông minh",
+      productCode: "WATCH005",
+      price: 1590000
+    },
+    tracking: [
+      { time: "2025-06-01 09:00", location: "Kho Cần Thơ", status: "Đã nhận hàng" },
+      { time: "2025-06-02 13:00", location: "Kho TP.HCM", status: "Đang vận chuyển" },
+      { time: "2025-06-03 15:00", location: "Kho Hà Nội", status: "Đã giao thành công" }
+    ]
+  }
+]; 
