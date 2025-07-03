@@ -1,0 +1,5 @@
+git clone 
+
+cd w-17track => npm i
+
+cd w-17track => cd backend => npm i
