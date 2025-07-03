@@ -123,5 +123,29 @@
         "status": "Đã giao thành công"
       }
     ]
+  },
+  {
+    "code": "abc",
+    "info": {
+      "sender": "lam",
+      "receiver": "phong",
+      "address": "123abc",
+      "status": "đang vận chuyển",
+      "productName": "San phẩm test",
+      "productCode": "sp01",
+      "price": 2000000
+    },
+    "tracking": [
+      {
+        "time": "2025-06-01 08:00",
+        "location": "Kho Hà Nội",
+        "status": "Đã nhận hàng"
+      },
+      {
+        "time": "2025-06-02 10:00",
+        "location": "Kho Đà Nẵng",
+        "status": "Đang vận chuyển"
+      }
+    ]
   }
 ]

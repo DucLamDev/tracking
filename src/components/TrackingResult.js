@@ -1,19 +1,38 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import { sampleData } from "../data/sampleData";
 
 function TrackingResult() {
   const { code } = useParams();
-  // Lấy dữ liệu từ localStorage nếu có, nếu không thì lấy sampleData
-  const stored = JSON.parse(localStorage.getItem("trackingData")) || sampleData;
-  const order = stored.find(item => item.code === code);
+  const [order, setOrder] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-  if (!order) return (
+  useEffect(() => {
+    setLoading(true);
+    setError(null);
+    fetch(`http://localhost:5000/orders/${code}`)
+      .then(res => {
+        if (!res.ok) throw new Error("Không tìm thấy mã vận đơn!");
+        return res.json();
+      })
+      .then(data => {
+        setOrder(data);
+        setLoading(false);
+      })
+      .catch(err => {
+        setError(err.message);
+        setLoading(false);
+      });
+  }, [code]);
+
+  if (loading) return <div className="container"><h2>Đang tải dữ liệu...</h2></div>;
+  if (error) return (
     <div className="container">
-      <h2>Không tìm thấy mã vận đơn!</h2>
+      <h2>{error}</h2>
       <Link to="/">Quay lại trang chủ</Link>
     </div>
   );
+  if (!order) return null;
 
   return (
     <div className="tracking-detail-page" style={{maxWidth: 900, margin: '40px auto', background: '#fff', borderRadius: 18, boxShadow: '0 4px 32px rgba(0,0,0,0.10)', padding: '36px 32px 32px 32px'}}>

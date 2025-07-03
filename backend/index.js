@@ -16,6 +16,18 @@ app.get('/orders', (req, res) => {
   res.json(data);
 });
 
+// Lấy đơn hàng theo mã code
+app.get('/orders/:code', (req, res) => {
+  const { code } = req.params;
+  const data = JSON.parse(fs.readFileSync(DATA_FILE, 'utf8'));
+  const order = data.find(item => item.code === code);
+  if (order) {
+    res.json(order);
+  } else {
+    res.status(404).json({ message: 'Không tìm thấy mã vận đơn!' });
+  }
+});
+
 // Thêm mới đơn hàng
 app.post('/orders', (req, res) => {
   const newOrder = req.body;
